@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TabWidget</class>
+ <widget class="QTabWidget" name="TabWidget">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>FLANC Ranglistengenerator v1.0</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>flanc.ico</normaloff>flanc.ico</iconset>
+  </property>
+  <property name="currentIndex">
+   <number>0</number>
+  </property>
+  <widget class="QWidget" name="ranglisten">
+   <attribute name="title">
+    <string>Ranglisten</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <spacer name="oben_serie">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Minimum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>15</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout1">
+      <item>
+       <layout class="QVBoxLayout" name="layout_v_serie">
+        <item>
+         <widget class="QPushButton" name="serie_btn">
+          <property name="text">
+           <string>Lade Serie</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="serie_cbb"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="teams_btn">
+          <property name="text">
+           <string>Saison Teams</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="driver_serie">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="layout_v_driver">
+        <item>
+         <widget class="QPushButton" name="name_btn">
+          <property name="text">
+           <string>Lade Fahrer*innen</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="name_cbb"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="all_drivers_btn">
+          <property name="text">
+           <string>Alle Fahrer*innen</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="serie_strecke">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Minimum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout2">
+      <item>
+       <layout class="QVBoxLayout" name="layout_v_strecke">
+        <item>
+         <widget class="QLabel" name="titel_strecke">
+          <property name="text">
+           <string>Rangliste der Serie laden nach</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="track_btn">
+          <property name="text">
+           <string>Strecke</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="track_cbb">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="strecke_datum">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="layout_v_datum">
+        <item>
+         <widget class="QLabel" name="titel_datum">
+          <property name="text">
+           <string>oder nach</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="datum_btn">
+          <property name="text">
+           <string>Datum</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="datum_cbb"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="strecke_allerennen">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Minimum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>17</width>
+        <height>17</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="all_races_btn">
+      <property name="text">
+       <string>Alle Rennen</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="layout_v_alle_rennen"/>
+    </item>
+    <item>
+     <widget class="QTableView" name="table"/>
+    </item>
+    <item>
+     <spacer name="table_export">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Minimum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>5</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="layout_h_exportieren">
+      <item>
+       <widget class="QPushButton" name="export_btn">
+        <property name="text">
+         <string>Liste exportieren</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="export_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="fahrerserienmanagement">
+   <attribute name="title">
+    <string>Fahrer- und Serienmanagement</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="verticalLayout_8">
+    <item>
+     <widget class="QGroupBox" name="mgmt_fahrer_groupBox">
+      <property name="title">
+       <string>Fahrer*innenmanagement</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <layout class="QHBoxLayout" name="layout_h_fahrer">
+         <item>
+          <widget class="QPushButton" name="mgmt_name_btn">
+           <property name="text">
+            <string>Fahrer*in laden</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="fahrer_fahrercbb">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QComboBox" name="mgmt_name_cbb"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="fahrerladen_name">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>15</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="layout_v_fahrerdaten">
+         <item>
+          <layout class="QHBoxLayout" name="layout_h_fahrerdaten">
+           <item>
+            <layout class="QFormLayout" name="formLayout_fahrer_left">
+             <item row="0" column="0">
+              <widget class="QLabel" name="name_lbl">
+               <property name="text">
+                <string>Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="name_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="mail_lbl">
+               <property name="text">
+                <string>Mail</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="mail_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="name_iracing">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Maximum</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>10</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayout_fahrer_right">
+             <item row="0" column="0">
+              <widget class="QLabel" name="iracingnr_lbl">
+               <property name="text">
+                <string>iRacing Nr</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="iracingnr_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="iracingname_lbl">
+               <property name="text">
+                <string>iRacing Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="iracingname_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="fahrername_serien">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>15</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="serienteilnahme">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Serienteilahme</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="layout_v_details_container">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+          </layout>
+         </item>
+         <item>
+          <spacer name="serien_seriendetails">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="team_details_lbl">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Team Details</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="layout_h_team_korr">
+           <item>
+            <layout class="QFormLayout" name="formLayout_korr_left">
+             <item row="0" column="0">
+              <widget class="QLabel" name="teamname_lbl">
+               <property name="text">
+                <string>Team Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="teamname_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="korrekturdatum_lbl">
+               <property name="text">
+                <string>Korrektur per</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="korrekturper_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="korrekturgrund_lbl">
+               <property name="text">
+                <string>Korrektur Grund</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="korrekturgrund_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="startnummer_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Startnummer</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="Teamdetails">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Maximum</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayout_korr_right">
+             <item row="0" column="0">
+              <widget class="QLabel" name="starts_lbl">
+               <property name="text">
+                <string>Korrektur Starts</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="starts_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="incs_lbl">
+               <property name="text">
+                <string>Korrektur Incs</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="incs_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="points_lbl">
+               <property name="text">
+                <string>Korrektur Points</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="points_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="teamdetails_speichern">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>15</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="layout_h_save" stretch="0,0,0,0">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="fahrerundteam_speichern_btn">
+           <property name="text">
+            <string>Anpassungen speichern</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="db_backup_btn">
+           <property name="text">
+            <string>Datenbank Backup starten</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_speichern">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="fahrer_loeschen_btn">
+           <property name="text">
+            <string>Fahrer*in aus allen Serien und der Datenbank LÖSCHEN</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="speichern_serie_mgmt">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Maximum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="mgmt_serie_groupBox">
+      <property name="title">
+       <string>Serienmanagement</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="layout_h_serie_laden">
+         <item>
+          <widget class="QPushButton" name="mgmt_serie_btn">
+           <property name="text">
+            <string>Serien laden</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="serie_laden">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QComboBox" name="mgmt_serie_cbb"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="layout_h_add_del_fahrer">
+         <item>
+          <layout class="QVBoxLayout" name="layout_v_neue_serie">
+           <item>
+            <widget class="QLabel" name="neue_serie_erstellen_lbl">
+             <property name="text">
+              <string>Neue Serie erstellen</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="neue_serie_erstellen_edit"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="neue_serie_erstellen_btn">
+             <property name="text">
+              <string>Erstellen</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="neue_serie_aendern">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="layout_v_serie_aendern">
+           <item>
+            <widget class="QLabel" name="serie_name_aendern_lbl">
+             <property name="text">
+              <string>Ausgewählte Serie Namen ändern</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="serie_name_aendern_edit"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="serie_name_aendern_btn">
+             <property name="text">
+              <string>Ändern</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="serie_aendern_loeschen">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="layout_v_serie_loeschen">
+           <item>
+            <widget class="QLabel" name="serie_loeschen_lbl">
+             <property name="text">
+              <string>Ausgewählte Serie löschen</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="serie_loeschen_edit">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="serie_loeschen_btn">
+             <property name="text">
+              <string>LÖSCHEN</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="unten">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="hilfe">
+   <attribute name="title">
+    <string>Hilfe / Über</string>
+   </attribute>
+   <widget class="QTextEdit" name="hilfe_ueber_text">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>1051</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;FLANC Ranglistengenerator (RAGE v1.0 - &amp;quot;Janeway&amp;quot;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;1. Einleitung&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;RAGE ist ein in Python geschriebenes Programm für die FLANC. Damit können in erster Linie rasch Ranglisten generiert werden. Ebenfalls kann der Fahrerdatenbestand gepflegt werden. Die folgenden Kapitel erklären RAGE grunsätzlich, welche Daten nötig sind und wie die Funktionen in den Registern verwendet werden können. Am Ende beschreibt ein technisches Kapitel, welche Python Module verwendet werden.  &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Daten, die RAGE benötigt&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die folgende Abbildung zeigt die Verzeichnisstruktur, wie sie zwingend zur Verfügung stehen muss. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/newPrefix/rage_verzeichnisstruktur.png&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Auf derselben Ebene, wie die EXE Datei, muss also ebenfalls die fahrer.json, sowie das Verzeichnis mit den jeweiligen Resultaten vorhanden sein. Auf der linken Seite ist ersichtlich, welche Struktur unter &amp;quot;data&amp;quot; nötig ist. Wichtig ist hier, dass pro Serie ein Verzeichnis erstellt wird und dieses den identischen Namen hat, wie im fahrer.json (siehe nächstes Kapitel).&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Die Fahrerdatenbank (fahrer.json)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die folgende Abbildung zeigt die Struktur der fahrer.json. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/newPrefix/rage_fahrer_struktur.png&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eine JSON Datei anstelle einer Datenbank wurde aus folgenden zwei Gründen umgesetzt: Es ist kein Datenbankserver nötig, es muss nur die EXE ausgeführt werden. In einer JSON sind die Daten mit einem geeigneten Editor einfach lesbar und können gegebenenfalls auch direkt verändert werden. Natürlich hat diese Lösung auch Nachteile. So sollte die EXE nicht von zwei Personen gleichezeitig genutzt und Daten verändert werden. Soll die fahrer.json direkt bearbeitet werden, muss dies unbedingt in einem geeigneten Editor passieren. Zu empfehlen sind die zwei gratis Programme Notepad++ oder Visual Studio Code. &lt;span style=&quot; font-style:italic;&quot;&gt;Keinenfalls darf die fahrer.json mit Word geöffnet und gespeichert werden! &lt;/span&gt;Vor grösseren Anpassungen (z. B. erstellen einer neuen Serie oder löschen von alten Serien) unbedingt von der fahrer.json eine Kopie erstellen.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die JSON Struktur ist absichtlich flach und einfach gehalten. Die Daten befinden sich in einer Liste (Array), sichtbar durch die [ auf Zeile 1. Danach folgt pro Fahrer ein Dictionary, erkennbar durch die {. Darin befinden sich die nötigen Schlüssel-Werte-Paare. Die ersten drei Zeilen sind pro Fahrer einmal vorhanden. Danach folgen pro Serie die Paare.: &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .Status (leer, also &amp;quot;&amp;quot; oder &amp;quot;aktiv&amp;quot; wenn aktiv in der Serie oder &amp;quot;out&amp;quot; wenn in der Serie, aber nicht mehr aktiv) &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .Team (Teamname in dieser Serie) &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .TeamStKorr (Zahl falls nötig durch Teamwechsel oder ähnliches)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .TeamIncKorr (Korrektur Incidents)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .TeamPktKorr (Korrektur der Punkte)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .TeamKorrDatum (wann wurde die Korrektur gemacht)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- .TeamKorrGrund (Erklärung für später :-))&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die Serie Bezeichnung vor dem Punkt, also z. B. &lt;span style=&quot; font-style:italic;&quot;&gt;GT3 2021&lt;/span&gt;.Status muss zwingend mit dem Verzeichnisnamen im RAGE/data übereinstimmen. War ein Fahrer oder Fahrerin in einer Serie gemeldet und hat er oder sie an mindestens einem Rennen teilgenommen, soll der Status immer entweder &amp;quot;aktiv&amp;quot; oder &amp;quot;out&amp;quot; sein. Nie sollte dann der Status leer bleiben. Grund: In der Teamwertung werden auch Punkte von Fahrern gewertet, welche den Status &amp;quot;out&amp;quot; haben. Wird der Fahrer aus der fahrer.json während der Serie gelöscht oder der Status auf &amp;quot;&amp;quot; gesetzt, werden seine Punkte nicht mehr berüchsichtigt. Zudem werden Ranglisten einzelner Rennen dann ev. leer Zeilen aufweisen, da die Fahrerangaben fehlen.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die Team Korrekturen sind dals Zahl (integer) eingetragen, damit RAGE sie direkt verrechnen kann. Bei einem Teamwechsel können die Punkte nicht mitgenommen werden. Sie müssen daher beim Fahrer direkt als minus Zahl angegeben werden.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Das Datum und der Grund sind rein informativ. Das Datum muss daher kein vorgegebenes Format aufweisen.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Die iRacing Rennen (xxx.json)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nach dem Rennen können im neuen iRacing UI die Ranglisten als JSON heruntergeladen werden. Ist diese Datei dann im richtigen Verzeichnis in RAGE/data/[Serie] abgelegt, steht sie in RAGE zur Auswertung zur verfügung. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;2. Register Ranglisten&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hier können rasch Ranglisten generiert und ins Excel exportiert werden. Als erstes muss dafür entweder eine Serie oder ein Fahrer oder Fahrerin geladen werden. Wird eine Serie geladen, steht die Serie-Rangliste direkt zur Verfügung und kann exportiert werden. Ein Klick auf &amp;quot;Saison Teams&amp;quot; generiert als nächstes die Rangliste der Teams dieser Saison. Mit einem weiteren Klick auf &amp;quot;Export&amp;quot; wird auch diese Rangliste exportiert und in dieselbe Datei &amp;quot;RAGE Export.xlsx&amp;quot; geschrieben. Mit vier Klicks wird somit eine Datei mit der Fahrer- und der Teamrangliste generiert :-)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ist die Serie mit &amp;quot;Lade Serie&amp;quot; geladen, können ebenfalls einzelne Strecken der Serie nach Name oder nach Datum angezeigt und exportiert werden.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mit &amp;quot;Lade Fahrer*innen&amp;quot; kann eine einzelne Person danach ausgewählt werden. Die Rennergebnisse werden dann Serien unabhängig dargestellt. Es ist daher rasch sichtbar, welche Rennen in welcher Serie mit welchen Ergebnissen gefahren wurde. Praktisch für's kommentieren und erstellen weiterer Statistiken.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mit &amp;quot;Alle Fahrer*innen&amp;quot; wird die ganze fahrer.json ausgegeben. Praktisch z. B. für SRA TV, welche pro Fahrer auch die iRacingNr und iRacing Namen benötigen. Die Korrekturen pro Serie können im Excel nachträglich dabei oft gelöscht werden, um die Tabelle nicht zu überladen.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;Alle Rennen&amp;quot; zeigt, wie der Name sagt, alle Rennen dieser Serien an. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;3. Register Fahrer- und Serienmanagement&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In diesem Register können bestehende Fahrerinnen und Fahrer angepasst und gelöscht, sowie neue erfasst werden. Das gleiche ist mit Serien möglich. Es ist zu beachten, dass hier mit ein paar Klicks rasch viele Daten gelöscht in der Datei fahrer.json gelöscht werden können. Daher sollte regelmässig, am besten vor solchen Mutationen ein Backup der fahrer.json erstellt werden. Dies ist mit dem Button &lt;span style=&quot; font-style:italic;&quot;&gt;Datenbank Backup starten&lt;/span&gt; einfach zu erledigen. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WICHTIG:&lt;/span&gt; Werden pro Tag mehr als ein Backup erstellt, überschreibt sich die Datei mit demselben Datum!&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bestehende Fahrerin oder bestehenden Fahrer anpassen&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mit einem Klick auf &lt;span style=&quot; font-style:italic;&quot;&gt;Fahrer*in laden &lt;/span&gt;stehen im Dropdownmenü alle bekannten Fahrer*innen zur Verfügung. Wird eine Person ausgewählt, ist Name, Mail, sowie iRacingNr. und iRacing Name ersichtlich. Ebenfalls werden pro Person die in RAGE bekannten Serien (gemäss fahrer.json) aufgelistet. So ist rasch ersichtlich, wer in welcher Serie mitfährt oder eingetragen war.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WICHTIG: &lt;/span&gt;Fahrer*innen, die einmal in einer Serie gefahren sind, aber während der Saison aufgehört haben, sollten mit &amp;quot;out&amp;quot; gekenntzeichnet werden. Die Checkbox bei der Serie muss aber aktiv bleiben. Nur so zählen die Punkte für die Teamrangiste noch mit. Ansonsten fehlen diese.  &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ebenfalls WICHTIG:&lt;/span&gt; Unter&lt;span style=&quot; font-style:italic;&quot;&gt; Team Details&lt;/span&gt; können Angaben oder Korrekturen erfasst werden. Bitte pro Serie einmal speichern (also, &lt;span style=&quot; font-style:italic;&quot;&gt;Team Details&lt;/span&gt; klicken, unten Angaben anpassen, &lt;span style=&quot; font-style:italic;&quot;&gt;Anpassungen speichern&lt;/span&gt;. Erst danach eine weitere Serie bearbeiten). RAGE speichert nur, was in dem Moment angezeigt wird!&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Neue Fahrerin oder Fahrer erfassen&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Neue Personen können erfasst werden, in dem anstelle eines Namens auf &lt;span style=&quot; font-style:italic;&quot;&gt;1 neuer Eintrag&lt;/span&gt; im Dropdown geklickt wird. Die leeren Felder können danach ausgefüllt und auf &lt;span style=&quot; font-style:italic;&quot;&gt;Anpassung speichern&lt;/span&gt; geklickt werden. Zuordnungen zu Serien sind hier ebenfalls direkt möglich. Bitte beachtet nur, dass auch hier pro&lt;span style=&quot; font-style:italic;&quot;&gt; Team Detail &lt;/span&gt;einmal gespeichert werden muss. RAGE speichert nur, was in dem Moment sichtbar ist. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WICHTIG:&lt;/span&gt; Damit die Person nach dem Speichern im Dropdown als Name ersichtlich ist, müssen die Daten mit Fahrer*innen laden neu geholt werden. Beginnt ein Name mit einem kleinen Buchstaben ist er ganz unten ersichtlich.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Fahrer*innen aus allen Serien und der Datenbank löschen&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tut, was es sagt. Es wird zur Sicherheit nochmals eine Bestätigung verlangt, bevor die Löschung effektiv erfolgt. Mach vorher bei Bedarf ein Backup der fahrer.json Datei. Weil, gelöscht ist gelöscht!&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Serienmanagement&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hier können Serien erstellt und gelöscht werden. Zudem ist es auch möglich, bestehende Seriennamen anzupassen. Egal was angepasst wird, immer daran denken, das Verzeichnis unter &lt;span style=&quot; font-style:italic;&quot;&gt;data &lt;/span&gt;(siehe Daten die RAGE benötigt) anzupassen.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;4. Wenn Probleme auftreten (Kleines Troubleshooting)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Im folgenden werden ein paar Situationen genannt, die auftreten können, und die mögliche Ursache, sowie Lösung.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problem: RAGE läst sich nicht starten.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mögliche Ursache: Das Programm wurde bereits durch eine andere Person geöffnet.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lösung: Warten, bis die andere Person das Programm geschlossen hat ;-)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problem: Rennen / Punkte werden in RAGE nicht angezeigt&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mögliche Ursache: xx.json von iRacing nicht oder im falschen Ordner abgelegt&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lösung: Mit &amp;quot;Lade Serie&amp;quot; die Daten laden und kontrollieren, ob unter &amp;quot;Strecke&amp;quot; das neuste Rennen ersichtlich ist. Wenn nein, fehlt die Datei im Serien Ordner. Wenn ja, hat iRacing ev. die Struktur in xxx.json geändert. Dann muss das Programm angepasst werden.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problem: Aktuelle Rangliste gibt bei Punkten überall nur 0 an&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mögliche Ursache: Die .json Resultate Datei wurde zu schnell nach dem Rennen in iRacing heruntergelanden. Dann kommt es zu diesem Effekt, weil die Punktezuordnung wohl noch nicht abgeschlossen war.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lösung: Datei nochmals in iRacing herunterladen und testen.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problem: In einem Team fehlen plötzlich Punkte / Incs / Starts einer Fahrerin oder  eines Fahrers&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mögliche Ursache: Bei einer Fahrerin oder einem Fahrer wurden im Fahrer*innenmanagement die Checkbox bei der Serienteilnahme deaktiviert. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lösung: Checkbox bei der Serie wieder aktivieren. Dahinter den Status von &lt;span style=&quot; font-style:italic;&quot;&gt;aktiv&lt;/span&gt; auf &lt;span style=&quot; font-style:italic;&quot;&gt;out&lt;/span&gt; umstellen. So erscheint die Person nicht mehr auf den Saisonranglisten, die Punkte werden aber beim Team noch dazu gezählt.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problem: Im Fahrer*innenmanagement unter den Team Details werden Daten teilweise nicht gespeichert&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mögliche Ursache: Du passt bei mehreren Serien Details Daten an, ohne dazwischen zu speichern&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lösung: RAGE kann immer du das speichern, was ersichtlich ist. Die nächste Abbildung verdeutlicht dies. Wenn du in der F3 und der GT3 unter &lt;span style=&quot; font-style:italic;&quot;&gt;Team Details&lt;/span&gt; Anpassungen gemacht hast, wird nur die von der GT3 gespeichert, weil nur die in dem Moment ersichtlich sind, wenn du auf &lt;span style=&quot; font-style:italic;&quot;&gt;Anpassungen speichern&lt;/span&gt; klickst. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/newPrefix/rage_team_details_speichern.png&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Problem: Neu erfasste Fahrerin oder Fahrer ist nicht in der Dropdownliste ersichtlich&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mögliche Ursache: Die Person ist erfasst, aber es wird noch die vorherige Liste, in der sie nicht vorhanden war, angezeigt.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lösung: Auf &lt;span style=&quot; font-style:italic;&quot;&gt;Fahrer*in laden&lt;/span&gt; klicken, um die Daten neu zu laden.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;5. Technische Informationen zu RAGE&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;RAGE ist in Python 3.6 gechrieben und benötigt folgende Module.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pandas&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die eingelesenen JSON Daten werden in ein Pandas Dataframe eingelsen. Deshalb startet alles jeweils mit einem &amp;quot;xxx laden&amp;quot; Button. Danach kann mit weiteren Buttons den Datenbestand gefilter und als Liste ausgegeben werden. Dies Lösung ist nicht die Beste, funktioniert aber soweit ganz gut. Vorallem können so Daten leicht ins Excel exportiert werden.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Die Funktionen, welche die Daten aufbereiten sind im Modul (Verzeichnis) &amp;quot;aufbereitung&amp;quot; und sind in input.py, output.py und work.py eingeteilt. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;openypxl&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Um die Excel Exporte wunschgemäss formatieren zu können, wird openpyxl verwendet. Die Formatierung ist im Modul (Verzeichnis) &amp;quot;excel&amp;quot;. Die formatexport.py formatiert die einzelnen Listen. Die writeexport.py schreibt diese dann effektiv ins Excel. Hier werden nur noch die Spaltenbreiten mitgegeben. Da dies teilweise noch statisch hinterlegt ist, dann es sein, dass hier später Anpassungen nötig werden.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;PyQt5 und Qt&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Um ein einigesmassen ansprechendes GUI zu erstellen wurde PyQt5 verwendet. Die Dateien befinden sich im Modul (Verzeichnis) &amp;quot;ui&amp;quot;. Die FLANC_RAGE.ui wurde mit dem Qt Designer generiert und als Ui_FLANC_RAGE.py kompiliert. Ebenfalls vorhanden und kompiliert ist die Qt_GUI.qrc als Qt_GUI_rc.py. Damit werden Ressourden wie Bilder zur Verfügung gestellt. Das Layout wird in der app.py als Modul implementiert und kann daher problemlos immer wieder neu kompiliert werden, falls Änderungen im GUI nötig sind. Einzig muss in der Ui_FLANC_RAGE.py in der untersten Zeile der Eintrag:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;import Qt_GUI_rc.py in&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;from ui import Qt_GUI_rc.py geändert werden.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ebenfalls im &amp;quot;ui&amp;quot; Verzeichnis müssen sich alles Grafiken befinden.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;pyinstaller&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Das Programm wird mit pyinstaller. Die Parameter dazu befinden sich in der Datei wichtig.txt&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Versionsverlauf&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 1.0 - &amp;quot;Janeway&amp;quot;: Bugfixes, stabile Version&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 0.9 - &amp;quot;Crusher&amp;quot;: Serienmanagement und Backup&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 0.8 - &amp;quot;Troi&amp;quot;: Fahrer*innen Management&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version 0.7 - &amp;quot;Yar&amp;quot;: Nur Ranglisten generieren&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Das Programm wird ab der Version 1.0 unter Github im Repository von &amp;quot;thierwaechter/RAGE&amp;quot; ersichtlich sein.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="flanc_logo">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>20</y>
+      <width>251</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/FLANC_Rechteck_250.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Qt_GUI.qrc"/>
+ </resources>
+ <connections/>
+</ui>

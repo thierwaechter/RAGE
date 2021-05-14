@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>rage_team_details_speichern.png</file>
+    <file>rage_fahrer_struktur.png</file>
+    <file>rage_verzeichnisstruktur.png</file>
+    <file>FLANC_Rechteck_250.jpg</file>
+    <file>flanc.ico</file>
+  </qresource>
+</RCC>
